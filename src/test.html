@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="windows-1252" />
+    <title>Test</title>
+    <link id="styleLink" href="./test1.css" rel="stylesheet" />
+    <style>
+      #stylesheetSelector {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <select id="stylesheetSelector">
+      <option>test1</option>
+      <option>test2</option>
+      <option>test3</option>
+      <option>test4</option>
+      <option>test5</option>
+      <option>test6</option>
+      <option>test7</option>
+      <option>test8</option>
+      <option>test9</option>
+    </select>
+    <p>ə</p>
+    <hr />
+    <p>
+      If the small characters above are not <b>&Eacute;&trade;</b>, you're
+      saving the HTML with a UTF-8 BOM.
+    </p>
+    <p>
+      If the large characters above are not <b>&Eacute;&trade;</b>, then either
+      the charset rule isn't being recognized or you're saving the CSS with a
+      UTF-8 BOM.
+    </p>
+    <p>If this background is pink, the @import rule is going through.</p>
+    <p id="tests8and9" hidden>
+      If this text is white on a dark gray background, the second @import rule
+      is going through.
+    </p>
+
+    <script>
+      const styleLink = document.getElementById("styleLink");
+      const stylesheetSelector = document.getElementById("stylesheetSelector");
+      const tests8and9 = document.getElementById("tests8and9");
+      function changeCss(stylesheet) {
+        styleLink.href = "./" + stylesheet + ".css";
+        tests8and9.hidden = !(stylesheet === "test8" || stylesheet === "test9");
+      }
+      stylesheetSelector.addEventListener("change", (evt) =>
+        changeCss(evt.target.value)
+      );
+      changeCss(stylesheetSelector.value);
+    </script>
+  </body>
+</html>

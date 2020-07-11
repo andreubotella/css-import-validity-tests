@@ -1,0 +1,12 @@
+/* @charset and an existent rule between @import rules */
+@import "./someOtherStylesheet.css";
+@charset "utf-8";
+@page {
+}
+@import "./aDifferentStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}

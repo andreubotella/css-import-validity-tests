@@ -1,0 +1,11 @@
+/* Testing a non-charset non-import rule */
+@page {
+}
+
+@import "./someOtherStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}

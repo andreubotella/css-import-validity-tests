@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="latin1" />
+    <title>Test 10</title>
+    <!--
+        The contents of the <style> element are passed to the CSS parser as a
+        stream of code points, not bytes, so the @charset rule is not processed.
+        (This is true in practice; see whatwg/html#2997)
+    -->
+    <style>
+      @charset "utf-8";
+
+      @import "./someOtherStylesheet.css";
+
+      body::before {
+        display: block;
+        content: "ə";
+        font-size: 5em;
+      }
+    </style>
+  </head>
+  <body>
+    <p>ə</p>
+    <hr />
+    <p>
+      If the small characters above are not <b>&Eacute;&trade;</b>, you're
+      saving the HTML with a UTF-8 BOM.
+    </p>
+    <p>
+      If the large character above is <b>&#x259;</b>, the
+      <code>&lt;style&gt;</code> element's contents are being sent to the CSS
+      parser as a byte stream. This shouldn't happen.
+    </p>
+    <p>If this background is pink, the @import rule is going through.</p>
+  </body>
+</html>

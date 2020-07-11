@@ -1,0 +1,10 @@
+@charset 'utf-8';
+/* the single quotes make the parser ignore this rule */
+
+@import "./someOtherStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}

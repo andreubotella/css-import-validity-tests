@@ -1,0 +1,11 @@
+/* Non-existent rule */
+@test {
+}
+
+@import "./someOtherStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}

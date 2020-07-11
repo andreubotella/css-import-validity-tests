@@ -1,0 +1,10 @@
+@charset;
+/* Charset rule with no contents */
+
+@import "./someOtherStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}

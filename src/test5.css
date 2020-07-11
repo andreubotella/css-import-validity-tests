@@ -1,0 +1,11 @@
+/* Control case: make sure that a declaration does block the import rule. */
+body {
+}
+
+@import "./someOtherStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}

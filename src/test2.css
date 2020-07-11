@@ -1,0 +1,11 @@
+@charset "windows-1252";
+@charset "utf-8";
+/* Double charset */
+
+@import "./someOtherStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}
