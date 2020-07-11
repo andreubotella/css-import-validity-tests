@@ -1,0 +1,16 @@
+/*
+  And for completeness, testing a valid style rule with an invalid
+  property before the @import
+*/
+p,
+div {
+  some-nonexistent-property: 1px;
+}
+
+@import "./someOtherStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}

@@ -1,0 +1,14 @@
+/*
+  Testing a style rule with an invalid selector before the @import
+*/
+someUndeclaredNamespace|p,
+div {
+}
+
+@import "./someOtherStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}

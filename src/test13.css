@@ -1,0 +1,15 @@
+/*
+  Testing a style rule with an valid selector before the @import
+  (control test for 12)
+*/
+|p,
+div {
+}
+
+@import "./someOtherStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}
