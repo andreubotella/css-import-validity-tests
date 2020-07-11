@@ -4,7 +4,7 @@ rules](https://www.w3.org/TR/css-cascade-4/#at-import) in certain cases.
 Some of these tests might give warnings or errors on validators. This is
 intentional.
 
-To run them, open `src/test.html` (for tests 1 to 9) and
+To run them, open `src/test.html` (for tests 1 to 9 and 11) and
 `src/test10.html` on a browser.
 
 From my few tests on various browsers, the results are consistent:
@@ -16,6 +16,8 @@ From my few tests on various browsers, the results are consistent:
   as valid.
 - Test 9 doesn't ignore the `@page` rule, and so treats the first `@import` as
   valid but not the second.
+- Test 11 ignores the `@page` rule because it has invalid syntax, and so treats
+  `@import` as valid.
 
 Please note that some of these tests depend on the bytes in the files staying as
 is (in terms of character encodings and BOM's; newlines don't matter), so please

@@ -1,0 +1,13 @@
+/*
+  Testing a valid at-rule with invalid syntax for that rule.
+  Compare this test with test 6.
+*/
+@page;
+
+@import "./someOtherStylesheet.css";
+
+body::before {
+  display: block;
+  content: "ə";
+  font-size: 5em;
+}
