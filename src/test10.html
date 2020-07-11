@@ -7,9 +7,11 @@
         The contents of the <style> element are passed to the CSS parser as a
         stream of code points, not bytes, so the @charset rule is not processed.
         (This is true in practice; see whatwg/html#2997)
+
+        The @charset rule must be the first bytes in the CSS file; there can be
+        no whitespace or newlines before.
     -->
-    <style>
-      @charset "utf-8";
+    <style>@charset "utf-8";
 
       @import "./someOtherStylesheet.css";
 
